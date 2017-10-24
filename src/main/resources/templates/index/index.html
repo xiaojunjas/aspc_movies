@@ -15,39 +15,17 @@
 			
 			<!-- 中间-->
 			<div class="row">
-				<!-- 左-->
+					<!-- 左-->
 				<div class="col-xs-3 j-content">
-					 <ul id="moviesList">
-                     </ul>
+					 <ul id="moviesList"> </ul>
 				</div>
-				
+					<!-- 中-->
 				<div class="col-xs-7 j-content">
 					<div id="allmap" class="j-map"></div>
 				</div>
-				
+					<!-- 右-->
 				<div class="col-xs-2 j-content">
-					<ul>
-						<li class="j-content-right-li">
-                        	<table>
-								<tr style="cursor: pointer;">
-									<td class="j-content-right-name">
-										<span style="font-size: 14px;">速度与激情8</span>
-									</td>
-									<td class="j-content-right-stusta" colspan="4">
-										<span class="j-content-left-span">9.0</span>
-									</td>
-								</tr>
-								<tr class="j-content-row-right">
-									<td style="width: 20%;text-align:left">
-										<span class="j-content-row-address">导演：xxx</span>
-									</td>
-									<td style="width: 10%">主演：</td>
-									<td style="width: 10%">xxx</td>
-								</tr>
-							</table>
-                        </li>
-					</ul>
-					
+					<ul id="moviesFilmList"></ul>
 				</div>
 			</div>
 		</div>
@@ -57,7 +35,7 @@
 
 <script id="moviesTempl" type="text/x-jquery-tmpl">
 {{each(i,item) movies}}	
-	<li class="movies-left-name" longitude="{{= item.longitude}}" latitude="{{= item.latitude}}">
+	<li class="movies-left-name" longitude="{{= item.longitude}}" latitude="{{= item.latitude}}" moviesId ="{{= item.id}}">
       <table style="width: 100%">
 		<tr style="cursor: pointer;">
 			<td class="j-content-left-name">
@@ -76,5 +54,29 @@
 		</tr>
 	</table>
   </li>
+{{/each}}
+</script>
+
+<script id="moviesFilmTempl" type="text/x-jquery-tmpl">
+{{each(i,item) moviesFilms}}	
+	<li class="j-content-right-li">
+      <table>
+		<tr style="cursor: pointer;">
+			<td class="j-content-right-name">
+				<span style="font-size: 14px;">{{= item.filmName}}</span>
+			</td>
+			<td class="j-content-right-stusta" colspan="4">
+				<span class="j-content-left-span">9.0</span>
+			</td>
+		</tr>
+		<tr class="j-content-row-right">
+			<td style="width: 20%;text-align:left">
+				<span class="j-content-row-address">导演：xxx</span>
+			</td>
+			<td style="width: 10%">主演：</td>
+			<td style="width: 10%">xxx</td>
+		</tr>
+	  </table>
+	</li>
 {{/each}}
 </script>

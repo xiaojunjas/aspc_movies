@@ -4,6 +4,7 @@
 .j-content{
 	height: 500px;
 	overflow:auto;
+	margin-left: -5px;
 }
 .j-foot{
 	height: 150px;

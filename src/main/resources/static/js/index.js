@@ -20,6 +20,8 @@ $(document).ready(function(){
 		 $(".movies-left-name").css('background','none');//移除所有背景颜色
 		 $(this).css("background", "#D1EEEE");//给当前添加背景颜色
 		 mapOverlay($(this).attr("longitude"),$(this).attr("latitude"));//传入当前影院经纬度
+		 var moviesId = $(this).attr("moviesId");//当前点击影院id
+		 listMoviesFilm(moviesId);
 	});
 	
 	//地图上显示动画
@@ -28,7 +30,6 @@ $(document).ready(function(){
 		map.centerAndZoom(point, 18);
 		var marker = new BMap.Marker(point);  // 创建标注
 		map.addOverlay(marker);               // 将标注添加到地图中
-		marker.removeAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
 		marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
 	}
 	
@@ -45,10 +46,27 @@ function listMovies(){
 			query:query
 		},
 		success : function(data){
-			console.log(data)
 			$("#moviesTempl").tmpl({movies: data}).appendTo("#moviesList");
 		},error:function(data){
 			layer.alert("出现错误信息!");
 		}
 	});
 }
+
+//获取影院电影信息
+function listMoviesFilm(moviesId){
+	$("#moviesFilmList").empty();
+	$.ajax({
+		type:"get",
+		url:"/movies/listMoviesFilm",
+		data:{
+			moviesId:moviesId
+		},
+		success : function(data){
+			$("#moviesFilmTempl").tmpl({moviesFilms: data}).appendTo("#moviesFilmList");
+		},error:function(data){
+			layer.alert("出现错误信息!");
+		}
+	});
+}
+

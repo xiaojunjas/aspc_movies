@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ane56.domain.MoviesAddress;
+import com.ane56.domain.MoviesFilm;
 import com.ane56.service.MoviesAddressService;
 
 @Controller
@@ -29,4 +30,10 @@ public class IndexController {
 	public @ResponseBody List<MoviesAddress> findRolePermissionsByRefId(String query){
 		return moviesAddressService.listMoviesAddress(null,null,query);
     }
+	
+	@RequestMapping(value="/listMoviesFilm", method=RequestMethod.GET)
+	public @ResponseBody List<MoviesFilm> listMoviesFilm(Long moviesId){
+		return moviesAddressService.findFilmMoviesByMoviesId(moviesId,null);
+    }
+	
 }
