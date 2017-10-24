@@ -22,6 +22,7 @@ import retrofit.RestAdapter;
 import retrofit.client.OkClient;
 import retrofit.converter.JacksonConverter;
 
+import com.ane56.service.MoviesAddressService;
 import com.ane56.service.UserService;
 import com.squareup.okhttp.OkHttpClient;
 
@@ -138,12 +139,12 @@ public class BeansConfiguration {
 		return service(commonConfig.getFileUrl(), FileService.class);
 	}*/
 	
-	/*@Bean
-	public PermissionService permissionService() {
-		return commonService(commonConfig.getUserUrl(), PermissionService.class);
+	@Bean
+	public MoviesAddressService poviesAddressService() {
+		return commonService(commonConfig.getUserUrl(), MoviesAddressService.class);
 	}
 	
-	@Bean
+	/*@Bean
 	public RolePermissionService rolePermissionService() {
 		return commonService(commonConfig.getUserUrl(), RolePermissionService.class);
 	}
