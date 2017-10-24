@@ -3,6 +3,7 @@
 }
 .j-content{
 	height: 500px;
+	overflow:auto;
 }
 .j-foot{
 	height: 150px;
@@ -14,3 +15,49 @@
 	margin:0;
 	font-family:"Î¢ÈíÑÅºÚ";
 }
+.j-content-left-name{
+	width: 20%; 
+	text-align: left;
+	vertical-align: middle;
+	height: 35px;
+}
+.j-content-left-stusta{
+	width: 60%;
+	text-align:right;
+	vertical-align: middle;
+}
+.j-content-left-span{
+	font-size: 14px;
+	color: red;
+}
+.j-content-row{
+	border-bottom: 1px solid #c2c2c2;
+	line-height:40px;
+	cursor:pointer;
+	height: 40px;
+}
+.j-content-row-address{
+	font-size: 12px;
+	color: #919090;
+}
+.j-content-right-name{
+	width: 20%; 
+	text-align: left;
+	vertical-align: middle;
+	height: 35px;
+}
+.j-content-right-stusta{
+	width: 60%;
+	text-align:right;
+	vertical-align: middle;
+}
+.j-content-row-right{
+	border-bottom: 1px solid #c2c2c2;
+	line-height:40px;
+	cursor:pointer;
+	height: 40px;
+}
+.j-content-right-li{
+	margin-left: -30px;
+}
+
