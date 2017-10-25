@@ -17,7 +17,7 @@
 			<div class="row">
 					<!-- 左-->
 				<div class="col-xs-3 j-content">
-					 <ul id="moviesList"> </ul>
+					 <ul id="moviesList" class="j-content-left-ul"> </ul>
 				</div>
 					<!-- 中-->
 				<div class="col-xs-7 j-content">
@@ -31,7 +31,41 @@
 		</div>
 	</body>
 	
+	
+	<!-- 电影信息模态框 -->
+	<div class="modal fade" id="film-movies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="container">
+		          <h2 class="title" id="purchase-filmName"><!-- <a href="http://www.xwcms.net">jQuery在线选座(影院版)</a> --></h2>
+		            <div class="demo clearfix">
+		                <!--左边座位列表-->
+		                <div id="seat_area">
+		                    <div class="front">屏幕</div>					
+		                </div>
+		                <!--右边选座信息-->
+		                <div class="booking_area">
+		                    <p>电影：<span>天将雄师</span></p>
+		                    <p>时间：<span>03月20日 22:15</span></p>
+		                    <p>座位：</p>
+		                    <ul id="seats_chose"></ul>
+		                    <p>票数：<span id="tickects_num">0</span></p>
+		                    <p>总价：<b>￥<span id="total_price">0</span></b></p>
+		                    <input type="button" class="btn" value="确定购买" id="btn-purchase"/>
+		                    <div id="legend"></div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary j-confirm-btn" id="film-movies-add">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 <script th:src="@{/js/index.js}"></script>
+<!-- <script th:src="@{/js/seat-charts.js}"></script> -->
 
 <script id="moviesTempl" type="text/x-jquery-tmpl">
 {{each(i,item) movies}}	
@@ -59,7 +93,7 @@
 
 <script id="moviesFilmTempl" type="text/x-jquery-tmpl">
 {{each(i,item) moviesFilms}}	
-	<li class="j-content-right-li">
+	<li class="film-right-name" filmId="{{= item.filmId}}">
       <table>
 		<tr style="cursor: pointer;">
 			<td class="j-content-right-name">
