@@ -4,7 +4,6 @@
 .j-content{
 	height: 500px;
 	overflow:auto;
-	margin-left: -5px;
 }
 .j-foot{
 	height: 150px;
@@ -58,7 +57,8 @@
 	cursor:pointer;
 	height: 40px;
 }
-.j-content-right-li{
-	margin-left: -30px;
+.j-content-left-ul{
+	margin-left: 20px;
 }
+
 
