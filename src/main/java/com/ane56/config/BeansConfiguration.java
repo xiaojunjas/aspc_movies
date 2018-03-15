@@ -54,6 +54,7 @@ public class BeansConfiguration {
 		Integer order = this.properties.getTemplateResolverOrder();
 		if (order != null) {
 			resolver.setOrder(order);
+
 		}
 		return resolver;
 	}
