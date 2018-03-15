@@ -44,6 +44,7 @@ public class IndexController {
 	public @ResponseBody Integer createFilmSeats(@RequestParam(value = "sellTickets[]", required = false)String [] sellTickets,Long filmId){
 		List<FilmSeats> filmSeats = new ArrayList<FilmSeats>();
 		for (String sellTicket : sellTickets) {
+			//×¢ÊÍ
 			FilmSeats film = new FilmSeats();
 			film.setSellIckets(sellTicket);
 			film.setFilmId(filmId);
